@@ -16,9 +16,12 @@ for e, i in enumerate(N):
 # print(head, head_count)       
         
 for i in range(head_count+1, len(N)):
-    if N[i] == 0 or N[i] == 1: #헤드 이후 0, 1 값은 더하는 것이 더 좋음 
+    if head == 1: #헤드가 1이면 바로 다음은 더해야 된다(ex.01006)
         head += N[i]
-
+    
+    elif N[i] == 0 or N[i] == 1: #헤드 이후 0, 1 값은 더해 한다(ex.02105)
+        head += N[i]
+            
     else:
         head = head * N[i] # 아니면 곱셈
         
